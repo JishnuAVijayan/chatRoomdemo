@@ -86,7 +86,7 @@ const ChatRoom=()=>{
    </main>
     <form onSubmit={sendMessageHandler}>
       <input value={formValue} onChange={(e)=>setFormValue(e.target.value)} placeholder='Type a message'/>
-      <button type="submit">✔</button>
+      <button type="submit">Send</button>
     </form>
    </>
  )
