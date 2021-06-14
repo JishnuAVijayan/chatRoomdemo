@@ -45,7 +45,7 @@ const SignIn=()=>{
  }
   return(<>
     <button className="sign-in" onClick={signInWithGoogle}>Sign In with Google</button>
-    <p>Do not violate the community guidelines or you will be banned for life!</p>
+    <p>Sign in with your google account..!!</p>
     </>
   )
 }
