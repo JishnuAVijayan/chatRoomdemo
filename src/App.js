@@ -23,7 +23,7 @@ const auth = firebase.auth();
 const firestore =firebase.firestore();
 const analytics = firebase.analytics();
 
-function App() {
+const App=()=> {
   const[user] =useAuthState(auth);
   return (
     <div className="App">
@@ -38,7 +38,7 @@ function App() {
   );
 }
 
-function SignIn(){
+const SignIn=()=>{
  const signInWithGoogle =()=>{
    const provider = new firebase.auth.GoogleAuthProvider();
    auth.signInWithPopup(provider);
@@ -50,13 +50,13 @@ function SignIn(){
   )
 }
  
-function SignOut(){
+const  SignOut=()=>{
   return auth.currentUser && (
     <button onClick={()=>auth.signOut()}> Sign Out</button>
   )
 }
 
-function ChatRoom(){
+const ChatRoom=()=>{
   const scrollview = useRef();
  const messagesRef = firestore.collection('messages');
  const query = messagesRef.orderBy('createdAt').limit(25);
@@ -91,7 +91,7 @@ function ChatRoom(){
    </>
  )
 }
-function ChatMessage(props){
+const ChatMessage=(props)=>{
   
   const {text, uid, photoURL} = props.messages;
    const messageClassType = uid === auth.currentUser.uid ? 'sent' : 'received'; 
